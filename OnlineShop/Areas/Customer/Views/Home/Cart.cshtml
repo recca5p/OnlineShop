@@ -27,7 +27,7 @@
                     <img src="~/@item.Image" width="200px" height="150px"/>
                 </td>
                 <td>@item.Name</td>
-                <td>@item.Price</td>
+                <td>@item.Price.ToString("#,###") VND</td>
                 <td>@item.ProductTypes.ProductType</td>
                 <td>@item.ProductColor</td>
                 <td>
@@ -46,7 +46,7 @@
     </div>
     <div class="col-6 text-right">
         <h3>Total Amount</h3>
-        <h3>Grant Total : @Model.Sum(c=>c.Price) </h3>
+        <h3>Grant Total : @Model.Sum(c=>c.Price).ToString("#,###") VND </h3>
         <a asp-area="Customer" asp-action="Checkout" asp-controller="Order" class="btn btn-info">Process to Checkout</a>
     </div>
 </div>

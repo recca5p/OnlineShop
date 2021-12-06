@@ -14,6 +14,7 @@
         products=new List<Products>();
     }
 
+
 }
 <br />
 
@@ -61,7 +62,6 @@
                     <label asp-for="Email"></label>
                 </div>
                 <div class="col-8">
-                    @*<select asp-for="ProductTypeId" asp-items="ViewBag.productTypeId" class="form-control"></select>*@
                     <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
@@ -72,13 +72,23 @@
                     <label asp-for="OrderDate"></label>
                 </div>
                 <div class="col-8">
-                    @*<select asp-for="SpecialTagId" asp-items="ViewBag.TagId" class="form-control"></select>*@
                     <input asp-for="OrderDate" type="text" readonly="readonly" class="form-control" />
                     <span asp-validation-for="OrderDate" class="text-danger"></span>
                 </div>
                 
             </div>
 
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Price"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Price" type="text" readonly="readonly" class="form-control" value="@products.Sum(c=>c.Price)"  />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                
+            </div>
         </div>
 
         <div class="col-6">
@@ -98,13 +108,13 @@
                             <img src="~/@item.Image" height="100px" width="150px"/>
                         </td>
                         <td>@item.Name</td>
-                        <td>@item.Price</td>
+                        <td>@item.Price.ToString("#,###") VND</td>
                     </tr>
                 }
                 </tbody>
             </table>
             <div class="text-right">
-                <h3>Total Price : @products.Sum(c=>c.Price)</h3>
+                <h3>Total Price : @products.Sum(c=>c.Price).ToString("#,###") VND</h3>
             </div>
             <div class="form-group text-right">
                 <input type="submit" value="Place Order" class="btn btn-success"/>

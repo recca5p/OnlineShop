@@ -19,6 +19,7 @@ namespace OnlineShop.Models
         public Order Order { get; set; }
         [ForeignKey("PorductId")]
         public Products Product { get; set; }
-
+        public string ProductName { get; set; }
+        public decimal ProductPrice { get; set; }
     }
 }

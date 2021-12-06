@@ -26,7 +26,8 @@ namespace OnlineShop.Models
         public string Email { get; set; }
         [Required]
         public string Address { get; set; }
-        
+        [Required]
+        public decimal Price { get; set; }
         public DateTime OrderDate { get; set; }
 
         public virtual List<OrderDetails> OrderDetails { get; set; }
