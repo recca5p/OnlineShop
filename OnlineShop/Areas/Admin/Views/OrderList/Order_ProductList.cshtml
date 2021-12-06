@@ -25,12 +25,12 @@
             <tr>
                 <td>@item.PorductId</td>
                 <td>@item.ProductName</td>
-                <td>@item.ProductPrice</td>
+                <td>@item.ProductPrice.ToString("#,###") VND</td>
             </tr>
         }
     </table>
     <div class="text-right">
-        <h3>Revenue : @Model.Sum(c=>c.ProductPrice).ToString("#,###") VND </h3>
+        <h3>Total : @Model.Sum(c=>c.ProductPrice).ToString("#,###") VND </h3>
     </div>
 </div>
 <div class="form-group">
