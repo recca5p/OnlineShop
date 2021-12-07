@@ -28,9 +28,8 @@ namespace OnlineShop.Areas.Admin.Controllers
                 return View(_db.Orders.ToList());
             }
 
-        [HttpPost]
-        //GET Edit Action Method
 
+        //GET Edit Action Method
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -56,7 +55,6 @@ namespace OnlineShop.Areas.Admin.Controllers
             {
                 _db.Update(order);
                 await _db.SaveChangesAsync();
-                TempData["edit"] = "Product type has been updated";
                 return RedirectToAction(nameof(Index));
             }
 
