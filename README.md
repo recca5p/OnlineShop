@@ -1,4 +1,4 @@
-# OnlineShop by VTP
+# OnlineShop
 ## Introduce:
 Framework: ASP.Net Core 2.2 MVC  
 Database: Micrsoft SQL Server
